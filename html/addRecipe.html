@@ -23,7 +23,7 @@
             <a style="color:#ede7f6" href="index.html">Chef's Choice</a>
         </div>
 
-        <div style="margin-top: 2%">
+        <!--<div style="margin-top: 2%">
             <ul class="navbar-list">
                 <li>
                     <button class="btn btn-primary btn-lg buttonColour" data-target="#loginModal" data-toggle="modal">
@@ -63,9 +63,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
-        </div>
+    </div>
     </div>
 </nav>
 
@@ -75,22 +75,48 @@
     <div class=row>
 
         <div class="col-lg-12 mainContent">
-            <h3>Add Recipe</h3>
+            <h3 style="margin-top: 2%">Add Recipe</h3>
 
             <form id="recipeForm">
                 <p>
-                    <label> Recipe Name </label>
-                    <input type="text" name="name" id="name">
+                <h4> Recipe Name </h4>
+                <input type="text" name="name" id="name">
                 </p>
 
                 <p>
-                    <label> Ingredients </label>
-                    <textarea name="ingredients" id="ingredients"> </textarea>
+                <h4> Ingredients </h4>
+                <textarea class="input-text-field" name="ingredients" id="ingredients" > </textarea>
                 </p>
 
                 <p>
-                    <label> Instructions </label>
-                    <textarea name="instructions" id="instructions"> </textarea>
+                <h4> Instructions </h4>
+                <textarea class="input-text-field" name="instructions" id="instructions"> </textarea>
+                </p>
+                <p>
+                <h4> Pick a category the recipe is in:</h4>
+                <select id="categories" style="width: 200px;height: 30px">
+                    <option value="DINNER"> Dinner </option>
+                    <option value="LUNCH"> Lunch </option>
+                    <option value="BREAKFAST"> Breakfast </option>
+                    <option value="DESSERT"> Dessert </option>
+                    <option value="DRINKS"> Drink </option>
+                    <option value="SIDEDISHES"> Side Dish </option>
+                </select>
+
+                <!--<div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle buttonColour" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" value>Dinner</a>
+                        <a class="dropdown-item" href="#">Lunch</a>
+                        <a class="dropdown-item" href="#">Breakfast</a>
+                        <a class="dropdown-item" href="#">Dessert</a>
+                        <a class="dropdown-item" href="#">Drinks</a>
+                        <a class="dropdown-item" href="#">Side dishes</a>
+                    </div>
+                </div>-->
                 </p>
                 <button style="margin-top: 2%" class="btn btn-lg btn-primary buttonColour" type="submit"> Submit
                 </button>

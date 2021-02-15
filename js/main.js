@@ -47,11 +47,18 @@ btnLogin.addEventListener('click', e =>{
     const pass = txtPassword.value;
     const auth = firebase.auth();
 
-   const promise = auth.signInWithEmailAndPassword(email,pass);
-   promise.catch(e=> console.log/e.message);
-
+    auth.signInWithEmailAndPassword(email,pass)
+       .then(d => console.log('logged in', d))
+       .catch(e=> console.log(e));
 })
 
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser){
+        console.log(firebaseUser);
+    } else {
+        console.log('not logget ind');
+    }
+});
 
 
 

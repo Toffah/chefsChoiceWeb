@@ -11,47 +11,45 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+var firestore = firebase.firestore();
 
-/*var messagesRef = firebase.firestore().ref('name');*/
+const docRef = firestore.collection("RecipeBook");
+document.getElementById('recipeForm').addEventListener('submit', submitRecipe);
 
-document.getElementById('recipeForm').addEventListener('submit', submitForm);
-
-function submitForm(e) {
+function submitRecipe(e) {
     e.preventDefault();
-
     var name = getInputVal('name')
     var ingredients = getInputVal('ingredients')
     var instructions = getInputVal('instructions')
-
-    saveMessage(name, ingredients, instructions);
+    var category = getInputVal('categories')
+    saveRecipe(name, ingredients, instructions,category);
 }
 
 function getInputVal(id) {
     return document.getElementById(id).value;
 }
 
-function saveMessage(name, ingredients, instructions){
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
+
+function saveRecipe(name, ingredients, instructions,category){
+   /* TODO: make the if statement work*/
+    if(name === "" || ingredients === "" || instructions === ""){
+        alert("Please fill out all fields")
+        return false;
+    }
+    else{
+    docRef.add({
         name: name,
         ingredients: ingredients,
-        instructions: instructions
+        instructions: instructions,
+        foodCategory: category
+    }).then(function(){
+        alert('Recipe Saved');
+    }).catch(function(error){
+        console.log('Got an error: ', error);
     });
+    }
 }
 
-const txtEmail = document.getElementById('inputUserName');
-const txtPassword = document.getElementById('inputPassword');
-const btnLogin = document.getElementById('btnLogin');
-
-btnLogin.addEventListener('click', e =>{
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
-
-    const promise = auth.signInWithEmailAndPassword(email,pass);
-    promise.catch(e=> console.log/e.message);
-
-})
 
 
 
