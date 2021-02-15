@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="../css/custom-styles.css" rel="stylesheet"/>
+    <title>Chef's Choice</title>
+
+</head>
+<body>
+
+
+<nav class="customNavbar">
+    <div class="navbar-content">
+
+        <div class="navbar-title">
+            <img src="../images/appIcon.svg" alt="Icon" style="fill:#ede7f6">
+            <a style="color:#ede7f6" href="index.html">Chef's Choice</a>
+        </div>
+
+        <div style="margin-top: 2%">
+            <ul class="navbar-list">
+                <li>
+                    <button class="btn btn-primary btn-lg buttonColour" data-target="#loginModal" data-toggle="modal">
+                        Log in
+                    </button>
+                </li>
+            </ul>
+            <div class="modal fade" tabindex="-1" id="loginModal"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">Login</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="inputUserName">Username</label>
+                                    <input class="form-control" placeholder="Login Username"
+                                           type="text" id="inputUserName"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Password</label>
+                                    <input class="form-control" placeholder="Login Password"
+                                           type="password" id="inputPassword"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-primary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class=container>
+
+
+    <div class=row>
+
+        <div class="col-lg-12 mainContent">
+            <h3>Add Recipe</h3>
+
+            <form id="recipeForm">
+                <p>
+                    <label> Recipe Name </label>
+                    <input type="text" name="name" id="name">
+                </p>
+
+                <p>
+                    <label> Ingredients </label>
+                    <textarea name="ingredients" id="ingredients"> </textarea>
+                </p>
+
+                <p>
+                    <label> Instructions </label>
+                    <textarea name="instructions" id="instructions"> </textarea>
+                </p>
+                <button style="margin-top: 2%" class="btn btn-lg btn-primary buttonColour" type="submit"> Submit
+                </button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="../js/addRecipe.js"></script>
+</body>
+</html>
